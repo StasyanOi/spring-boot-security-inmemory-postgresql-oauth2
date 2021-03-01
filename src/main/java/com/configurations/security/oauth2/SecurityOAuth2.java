@@ -16,9 +16,10 @@ public class SecurityOAuth2 extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("/home").permitAll()
                 .antMatchers("/profile").authenticated()
-                .antMatchers("/*").permitAll()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/*").denyAll()
+                .antMatchers("/**").denyAll()
                 .and()
                 .oauth2Login()
                 .defaultSuccessUrl("/profile");

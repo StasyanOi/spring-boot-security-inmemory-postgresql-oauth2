@@ -33,9 +33,10 @@ public class SecurityPostgreSQL extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/home").permitAll()
                 .antMatchers("/profile").authenticated()
-                .antMatchers("/*").permitAll()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/*").denyAll()
+                .antMatchers("/**").denyAll()
                 .and()
                 .formLogin()
                 .defaultSuccessUrl("/profile");
