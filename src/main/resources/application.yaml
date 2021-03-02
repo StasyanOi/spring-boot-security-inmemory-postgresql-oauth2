@@ -3,3 +3,6 @@ logging:
     org:
       springframework:
         security: DEBUG
+      apache:
+        tomcat: DEBUG
+        catalina: DEBUG
