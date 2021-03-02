@@ -1,8 +1,0 @@
-spring:
-  datasource:
-    password: postgres
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
-    schema: classpath:data.sql
-    initialization-mode: always
-
