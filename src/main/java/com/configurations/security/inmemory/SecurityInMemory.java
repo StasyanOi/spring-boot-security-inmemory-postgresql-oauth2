@@ -33,6 +33,7 @@ public class SecurityInMemory extends WebSecurityConfigurerAdapter {
                 .antMatchers("/*").denyAll()
                 .antMatchers("/**").denyAll()
                 .and()
+//              .httpBasic()
                 .formLogin()
                 .defaultSuccessUrl("/profile");
     }
